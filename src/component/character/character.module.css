@@ -1,0 +1,58 @@
+/* character.module.css */
+
+.App {
+    width: 100%;
+}
+
+.header{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.lost_wrap {
+    display: grid;
+    grid-template-columns: repeat(minmax(300px, 1fr));
+    justify-content: center; 
+}
+
+.lost_character {
+    display: flex;
+    flex: 1 1 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.classinfo {
+    text-align: center;
+}
+
+/* character.module.css */
+
+.swiperContainer {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.characterCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
