@@ -1,4 +1,5 @@
 import React ,{useState, useEffect} from 'react';
+import './search.css';
 
 
 function Search() {
@@ -12,21 +13,15 @@ function Search() {
     );
     
     return(
-        <div>
-            <h1>Character Search</h1>
+        <div className='input-box'>
             <input
+                className='search'
                 type="text"
-                placeholder="Search for a character"
+                placeholder="검색할 캐릭터 명을 입력해주세요."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <ul>
-                {filteredCharacters.map((character) => (
-                    <li key={character.id}>
-                        <h2>{character.name}</h2>
-                    </li>
-                ))}
-            </ul>
+            <button className='search-button'></button>
         </div>
     )
 };

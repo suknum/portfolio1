@@ -1,0 +1,21 @@
+input {
+    all: unset;
+    border: 1px solid #eee;
+    text-align: left;
+    border-radius: 0.3em;
+    box-shadow: 3px 3px 10px #eee;
+}
+.input-box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.2em;
+}
+.search {
+    padding: 0.3em;
+    width: 70%;
+    display: flex;
+    font-size: 1em;
+}
