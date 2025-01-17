@@ -4,13 +4,20 @@ import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import Character from './component/character';
 import Search from './component/search';
+import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
+import Nav from './component/Nav';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Search />
-    <Character />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Search />}/>
+      </Routes>
+    </BrowserRouter>
+    <Nav />
   </React.StrictMode>
 );
 

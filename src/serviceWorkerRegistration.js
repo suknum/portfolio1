@@ -139,7 +139,7 @@ export function unregister() {
 // src/serviceWorkerRegistration.js
 
 // Service Worker 등록 함수
-export function register() {
+export function Register() {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker
@@ -155,7 +155,7 @@ export function register() {
 }
 
 // Service Worker 해제 함수
-export function unregister() {
+export function Unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then((registration) => {
