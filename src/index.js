@@ -8,7 +8,7 @@ import Search from './component/search';
 import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
 import Nav from './component/Nav';
 import CharacterSearch from './component/characterSearch';
-
+import Footer from './component/footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +19,7 @@ root.render(
       </Routes>
     </BrowserRouter>
     <Nav />
+    <Footer />
   </React.StrictMode>
 );
 

@@ -23,7 +23,7 @@ function Character() {
     }, []);
 
     return (
-        <div className="App">
+        <div className={styles.App}>
             <h1 className={styles.header}>나의 캐릭터들</h1>
             <Swiper
                 spaceBetween={30}
