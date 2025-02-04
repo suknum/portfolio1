@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Character from './character';
+import EventBanner from './eventBanner';
+
 
 const TabMenu = () => {
   const [activeTab, setActiveTab] = useState('Home');
@@ -24,7 +26,7 @@ const TabMenu = () => {
       </nav>
       <div style={styles.content}>
         {activeTab === '내정보' && <Character />}
-        {activeTab === '이벤트' && <p>About us section.</p>}
+        {activeTab === '이벤트' && <EventBanner />}
         {activeTab === '업데이트' && <p>Contact us here.</p>}
       </div>
     </div>
@@ -33,6 +35,8 @@ const TabMenu = () => {
 
 const styles = {
   nav: {
+    width : '100%',
+    justifyContent: 'center',
     display: 'flex',
     listStyle: 'none',
     padding: 0,

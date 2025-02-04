@@ -45,14 +45,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
+    height: 500px;
 }
 
 .characterCard {
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 20px;
+    padding: 0px;
     background: #f9f9f9;
     text-align: center;
+    font-size: 14px;
 }
 
+.characterName {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.characterImage {
+    
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}

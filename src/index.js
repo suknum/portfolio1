@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -6,7 +7,7 @@ import Character from './component/character';
 import Search from './component/search';
 import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
 import Nav from './component/Nav';
-
+import CharacterSearch from './component/characterSearch';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Search />}/>
+        <Route path="/" element={<CharacterSearch />}/>
       </Routes>
     </BrowserRouter>
     <Nav />
