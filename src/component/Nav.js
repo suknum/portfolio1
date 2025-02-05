@@ -47,8 +47,9 @@ const styles = {
     borderBottom: '2px solid transparent',
   },
   activeTab: {
-    borderBottom: '2px solid blue',
     fontWeight: 'bold',
+    backgroundColor: '#21262e',
+    borderRadius : '5px',
   },
   content: {
     marginTop: '20px',

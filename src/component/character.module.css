@@ -1,5 +1,10 @@
 /* character.module.css */
 
+*{
+    color: #fff;
+    background-color: #15181d;
+}
+
 .App {
     width: 100%;
     height: 1000px;
@@ -11,13 +16,13 @@
     justify-content: center;
     align-items: center;
 
-
 }
 
 .lost_wrap {
     display: grid;
     grid-template-columns: repeat(minmax(300px, 1fr));
     justify-content: center; 
+    color: #272c35;
 }
 
 .lost_character {
@@ -52,7 +57,6 @@
 }
 
 .characterCard {
-    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 0px;
     background: #f9f9f9;

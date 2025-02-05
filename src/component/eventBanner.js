@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { fetchUpdateInfo } from '../api/UpdateApi';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -11,8 +12,7 @@ function EventBanner() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch("/eventBanner.json"); // json 데이터 경로
-                const data = await response.json();
+                const data = await fetchUpdateInfo();
                 console.log(data);
                 setEventData(data);
             } catch (error) {
@@ -20,7 +20,9 @@ function EventBanner() {
             }
         };
         fetchData();
-    }, []);
+    } , []);
+
+   
 
     return (
         <div className="App">
@@ -34,7 +36,12 @@ function EventBanner() {
                     <SwiperSlide key={index} className={styles.swiperSlide}>
                         <div className={styles.eventBannerCard}>
                             <div className={styles.classinfo}>
-                                
+                                <img 
+                                    src={eventBanner.Thumbnail}
+                                    onClick={() => window.open(eventBanner.Link, "_blank")}
+                                    
+                                />
+                                <p>{eventBanner.StartDate} ~ {eventBanner.EndDate}</p>
                             </div>
                         </div>
                     </SwiperSlide>

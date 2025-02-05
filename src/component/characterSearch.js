@@ -15,6 +15,11 @@ const CharacterSearch = () => {
     }
   }
 
+  const SearchBar = () => {
+
+    
+  } 
+
   const handleSearch = async () => {
     if (!characterName.trim()) {
       setError("⚠ 캐릭터 이름을 입력하세요.");
@@ -54,20 +59,21 @@ const CharacterSearch = () => {
 
   return (
     <div style={styles.container}>
-      <h2 style={styles.header}>로스트아크 캐릭터 검색</h2>
-      <input
-        type="text"
-        placeholder="캐릭터 이름 입력"
-        value={characterName}
-        onChange={(e) => setCharacterName(e.target.value)}
-        onKeyDown={handleKeyPress}
+      <div style={styles.contentWrap}>
+        <h2 style={styles.header}>LostIn</h2>
+        <input
+          type="text"
+          placeholder="캐릭터 이름을 입력해주세요..."
+          value={characterName}
+          onChange={(e) => setCharacterName(e.target.value)}
+          onKeyDown={handleKeyPress}
 
-        style={styles.input}
-      />
-      <button onClick={handleSearch} style={styles.button} disabled={loading}>
-        {loading ? <FontAwesomeIcon icon={faMagnifyingGlass} /> : <FontAwesomeIcon icon={faMagnifyingGlass} />}
-      </button>
-
+          style={styles.input}
+        />
+        <button onClick={handleSearch} style={styles.button} disabled={loading}>
+          {loading ? <FontAwesomeIcon icon={faMagnifyingGlass} /> : <FontAwesomeIcon icon={faMagnifyingGlass} />}
+        </button>
+      </div>
       {error && <p style={styles.error}>{error}</p>}
 
       {characterData && (
@@ -84,45 +90,57 @@ const CharacterSearch = () => {
 // ✅ 스타일 정의 추가
 const styles = {
   header: {
-    marginTop: '-10px',
+    marginTop: '5px',
+    marginright : '2px',
   },
   container: {
     textAlign: 'center',
     padding: '10px',
     maxWidth: '400px',
     margin: 'auto',
-    border: '1px solid #ccc',
-    borderRadius: '10px',
-    backgroundColor: '#f9f9f9',
+    borderBottom: '1px solid #272c35',
+    backgroundColor: '#15181d',
+    color : '#fff',
   },
+
+  contentWrap: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginright : '2px',
+  },
+
   input: {
-    width: '70%',
+    width: '60%',
     padding: '8px',
     marginBottom: '5px',
     marginRight : '2px',
     border: '1px solid #ccc',
     borderRadius: '5px',
+    boxShadow: 'none',
   },
+
   button: {
     padding: '2px 15px',
     cursor: 'pointer',
     border: 'none',
-    backgroundColor: '#f9f9f9',
+    backgroundColor: '#15181d',
     borderRadius: '5px',
     fontSize: '16px',
-    color: '#000',
+    color: '#fff',
   },
+
   error: {
     color: 'red',
     fontSize: '14px',
     marginTop: '10px',
   },
+
   result: {
     marginTop: '20px',
     padding: '10px',
     border: '1px solid #ddd',
     borderRadius: '5px',
-    backgroundColor: '#fff',
+    backgroundColor: '#15181d',
   },
 };
 

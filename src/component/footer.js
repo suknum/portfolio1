@@ -18,10 +18,8 @@ const styles = {
         textAlign: 'center',
         padding: '10px 0',
         width: '100%',
-        position: 'fixed',
-        bottom: 0,
-        zIndex: 100,
         fontSize: '0.8rem',
+        color : '#fff',
 
 
     },

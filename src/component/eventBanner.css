@@ -1,0 +1,14 @@
+.swiperContainer {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+    border-radius: 10px;
+    margin-bottom: 100px;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}

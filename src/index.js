@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import Character from './component/character';
-import Search from './component/search';
 import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
 import Nav from './component/Nav';
 import CharacterSearch from './component/characterSearch';
