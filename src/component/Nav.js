@@ -4,7 +4,7 @@ import EventBanner from './eventBanner';
 
 
 const TabMenu = () => {
-  const [activeTab, setActiveTab] = useState('Home');
+  const [activeTab, setActiveTab] = useState('내정보');
 
   return (
     <div>

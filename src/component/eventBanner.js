@@ -25,7 +25,7 @@ function EventBanner() {
    
 
     return (
-        <div className="App">
+        <div className={styles.App}>
             <h1 className={styles.header}>진행중인 이벤트</h1>
             <Swiper
                 spaceBetween={30}
@@ -37,6 +37,7 @@ function EventBanner() {
                         <div className={styles.eventBannerCard}>
                             <div className={styles.classinfo}>
                                 <img 
+                                    className={styles.eventBannerImage}
                                     src={eventBanner.Thumbnail}
                                     onClick={() => window.open(eventBanner.Link, "_blank")}
                                     
