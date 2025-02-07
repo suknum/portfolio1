@@ -8,16 +8,20 @@ import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
 import Nav from './component/Nav';
 import CharacterSearch from './component/characterSearch';
 import Footer from './component/footer';
+import Home from './component/Home';
+import CharacterResult from './component/characterResult';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CharacterSearch />}/>
+        <Route path="/" element={<Home />}/>
+        
+        <Route path="/character/:id" elemenst={<CharacterResult />}/>
       </Routes>
     </BrowserRouter>
-    <Nav />
+    
     <Footer />
   </React.StrictMode>
 );
