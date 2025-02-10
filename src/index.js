@@ -18,7 +18,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Home />}/>
         
-        <Route path="/character/:id" elemenst={<CharacterResult />}/>
+        <Route path="/results" element={<CharacterResult />}/>
       </Routes>
     </BrowserRouter>
     

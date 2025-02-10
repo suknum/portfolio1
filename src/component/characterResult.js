@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import { fetchCharacterInfo} from '../api/LostArkApi';
-import { fetchImageInfo} from '../api/CharacterImgApi';
+import { fetchCharacterInfo } from '../api/LostArkApi';
+import { fetchImageInfo } from '../api/CharacterImgApi';
 
-const Results = () => {
-  const [searchParams] = useSearchParams();
-  const characterName = searchParams.get('name'); // URL에서 검색어 가져오기
-
+const CharacterResult = ({ characterName }) => {  // ← Results → CharacterResult
   const [characterData, setCharacterData] = useState(null);
   const [characterImgData, setCharacterImgData] = useState(null);
   const [error, setError] = useState(null);
@@ -20,12 +16,18 @@ const Results = () => {
       setError(null);
 
       try {
+        console.log("🔍 Fetching data for:", characterName);
+        
         const data = await fetchCharacterInfo(characterName);
         const imgData = await fetchImageInfo(characterName);
-
+        const matchData = data.find((item) => item.CharacterName === characterName);
+        
+        console.log("📜 Character Data:", data);
+        console.log("🖼 Image Data:", imgData);
+        
         if (Array.isArray(data) && data.length > 0) {
-          setCharacterData(data[0]); // 첫 번째 캐릭터 정보 저장
-          setCharacterImgData(imgData?.ArmoryProfile); // 이미지 데이터 저장
+          setCharacterData(matchData);
+          setCharacterImgData(imgData?.ArmoryProfile);
         } else {
           setError('❌ 해당 캐릭터 정보를 찾을 수 없습니다.');
         }
@@ -42,7 +44,7 @@ const Results = () => {
 
   return (
     <div style={styles.container}>
-      <h2>🔍 검색 결과: {characterName}</h2>
+      <h2>검색 결과: {characterName}</h2>
 
       {loading && <p>로딩 중...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -50,17 +52,22 @@ const Results = () => {
       {characterData && (
         <div>
           <h3>{characterData.CharacterName}</h3>
-          <p>클래스: {characterData.CharacterClass}</p>
-          <p>아이템 레벨: {characterData.ItemLevel}</p>
-          {characterImgData && <img src={characterImgData} alt="캐릭터 이미지" />}
+          <p>클래스: {characterData.CharacterClassName}</p>
+          <p>아이템 레벨: {characterData.ItemAvgLevel}</p>
+          <img src={characterImgData?.CharacterImage} alt="캐릭터이미지" />
         </div>
       )}
     </div>
   );
 };
+  // ← Results → CharacterResult
+
+
+
 
 const styles = {
   container: {
+    maxWidth: '100%',
     padding: '10px',
     textAlign: 'center',
   },
@@ -68,9 +75,10 @@ const styles = {
   img : {
     width : '100%',
     height : 'auto',
+
   }
 
   
 };
 
-export default Results;
+export default CharacterResult;

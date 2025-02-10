@@ -1,11 +1,11 @@
-import React, { useState, } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-const CharacterSearch = () => {
+const CharacterSearch = ({ setSearchQuery, setShowResult }) => {
   const [characterName, setCharacterName] = useState('');
-  const navigate = useNavigate(); // 페이지 이동을 위한 hook
+  const navigate = useNavigate();
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
@@ -19,14 +19,20 @@ const CharacterSearch = () => {
       return;
     }
 
-    // 검색어를 가지고 결과 페이지로 이동
-    navigate(`/results?name=${characterName}`);
+    setSearchQuery(characterName); // 검색어 상태 업데이트
+    setShowResult(true); // 검색 결과 활성화
+  };
+
+  const goToHome = () => {
+    setSearchQuery('');
+    setShowResult(false); // 기본 화면으로 돌아가기
+    navigate('/');
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.contentWrap}>
-        <h2 style={styles.header}>LostIn</h2>
+        <h2 style={styles.header} onClick={goToHome}>LostIn</h2>
 
         <input
           type="text"
@@ -43,6 +49,11 @@ const CharacterSearch = () => {
     </div>
   );
 };
+
+
+
+
+
 
 
 
