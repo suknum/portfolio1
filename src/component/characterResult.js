@@ -44,7 +44,6 @@ const CharacterResult = ({ characterName }) => {  // ← Results → CharacterRe
 
   return (
     <div style={styles.container}>
-      <h2>검색 결과: {characterName}</h2>
 
       {loading && <p>로딩 중...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}

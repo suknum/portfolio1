@@ -3,10 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
-import Character from './component/character';
 import { BrowserRouter , Router , Route , Routes } from 'react-router-dom';
-import Nav from './component/Nav';
-import CharacterSearch from './component/characterSearch';
 import Footer from './component/footer';
 import Home from './component/Home';
 import CharacterResult from './component/characterResult';
@@ -17,7 +14,6 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />}/>
-        
         <Route path="/results" element={<CharacterResult />}/>
       </Routes>
     </BrowserRouter>

@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
 
 }
 
@@ -43,7 +44,7 @@
 
 .swiperContainer {
     width: 100%;
-    max-width: 360px;
+    max-width: 300px;
     margin: auto;
     border-radius: 10px;
     margin-bottom: 100px;
@@ -53,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
+    height: 450px;
 }
 
 .characterCard {

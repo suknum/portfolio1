@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
-const CharacterSearch = ({ setSearchQuery, setShowResult }) => {
+const CharacterSearch = ({ setSearchQuery, setShowResult, setActiveTab , setShowUpdate }) => {
   const [characterName, setCharacterName] = useState('');
   const navigate = useNavigate();
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
+      e.target.blur();
       handleSearch();
     }
   };
@@ -21,11 +23,13 @@ const CharacterSearch = ({ setSearchQuery, setShowResult }) => {
 
     setSearchQuery(characterName); // 검색어 상태 업데이트
     setShowResult(true); // 검색 결과 활성화
+    setActiveTab(''); // ✅ 검색 시 활성화된 탭 닫기
+    setShowUpdate(false); // ✅ 검색 시 업데이트 숨김
   };
 
   const goToHome = () => {
     setSearchQuery('');
-    setShowResult(false); // 기본 화면으로 돌아가기
+    window.location.reload(); // 새로고침
     navigate('/');
   };
 
@@ -49,6 +53,7 @@ const CharacterSearch = ({ setSearchQuery, setShowResult }) => {
     </div>
   );
 };
+
 
 
 

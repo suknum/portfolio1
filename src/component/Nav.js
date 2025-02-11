@@ -1,24 +1,19 @@
 import React, { useState } from 'react';
 
-const Nav = ({ handleTabClick }) => {
-  const [activeTab, setActiveTab] = useState(''); // 현재 선택된 탭
+const Nav = ({ setActiveTab, activeTab , handleTabClick}) => {
 
-  const handleTabSelection = (tab) => {
-    setActiveTab(tab);
-    handleTabClick(tab);
-  };
 
   return (
     <nav style={styles.navContainer}>
       <ul style={styles.nav}>
-        {['내정보', '이벤트', '업데이트'].map((tab) => (
+        {['내정보', '이벤트', '순위'].map((tab) => (
           <li
             key={tab}
             style={{
               ...styles.tab,
-              ...(activeTab === tab ? styles.activeTab : {}),
+              ...(activeTab === tab ? styles.activeTab : {}),//
             }}
-            onClick={() => handleTabSelection(tab)}
+            onClick={() => handleTabClick(tab)}
           >
             {tab}
           </li>
@@ -35,7 +30,7 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#161b22', // 다크한 느낌의 배경
+    backgroundColor: '#15181d', // 다크한 느낌의 배경
     padding: '10px 0',
     borderBottom: '2px solid #30363d', // 하단 테두리 추가
   },
@@ -59,6 +54,7 @@ const styles = {
     backgroundColor: '#30363d',
     color: '#ffffff',
   },
+  
 };
 
 
