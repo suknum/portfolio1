@@ -14,8 +14,24 @@
     }
     
   ],
+
+  "screenshots": [
+    {
+      "src": "/icons/screenshot1.png",
+      "type": "image/png",
+      "sizes": "1080x1920",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/icons/screenshot2.png",
+      "type": "image/png",
+      "sizes": "1080x1920"
+    }
+  ],  
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000"
+
+  
 }

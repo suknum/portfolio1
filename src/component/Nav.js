@@ -33,6 +33,7 @@ const styles = {
     backgroundColor: '#15181d', // 다크한 느낌의 배경
     padding: '10px 0',
     borderBottom: '2px solid #30363d', // 하단 테두리 추가
+    padding : '0',
   },
   nav: {
     display: 'flex',

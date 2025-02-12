@@ -5,6 +5,7 @@ import CharacterResult from './characterResult';
 import Character from './character';
 import EventBanner from './eventBanner';
 import Update from './Update';
+import CharacterRank from './CharacterRank';
 
 
 const Home = () => {
@@ -41,7 +42,7 @@ const Home = () => {
           <>
             {activeTab === '내정보' && <Character />}
             {activeTab === '이벤트' && <EventBanner />}
-            {activeTab === '순위' && <p></p>}
+            {activeTab === '순위' && <CharacterRank />}
           </>
         )}
       </div>

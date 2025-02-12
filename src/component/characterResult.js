@@ -53,7 +53,9 @@ const CharacterResult = ({ characterName }) => {  // ← Results → CharacterRe
           <h3>{characterData.CharacterName}</h3>
           <p>클래스: {characterData.CharacterClassName}</p>
           <p>아이템 레벨: {characterData.ItemAvgLevel}</p>
+          <div style={styles.imgWrap}>
           <img src={characterImgData?.CharacterImage} alt="캐릭터이미지" />
+          </div>
         </div>
       )}
     </div>
@@ -70,6 +72,7 @@ const styles = {
     padding: '10px',
     textAlign: 'center',
   },
+
 
   img : {
     width : '100%',

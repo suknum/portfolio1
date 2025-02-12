@@ -35,20 +35,25 @@ const CharacterSearch = ({ setSearchQuery, setShowResult, setActiveTab , setShow
 
   return (
     <div style={styles.container}>
-      <div style={styles.contentWrap}>
         <h2 style={styles.header} onClick={goToHome}>LostIn</h2>
+      <div style={styles.contentWrap}>
 
-        <input
-          type="text"
-          placeholder="캐릭터 이름을 입력해주세요..."
-          value={characterName}
-          onChange={(e) => setCharacterName(e.target.value)}
-          onKeyDown={handleKeyPress}
-          style={styles.input}
-        />
-        <button onClick={handleSearch} style={styles.button}>
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-        </button>
+        <form method='get' style={styles.form}>
+          <input
+            type="text"
+            placeholder="캐릭터 이름을 입력해주세요..."
+            value={characterName}
+            onChange={(e) => setCharacterName(e.target.value)}
+            onKeyDown={handleKeyPress}
+            style={styles.input}
+            
+          />
+          
+          <button onClick={handleSearch} style={styles.button}>
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          </button>
+        </form>
+        
       </div>
     </div>
   );
@@ -88,13 +93,16 @@ const styles = {
   },
 
   input: {
-    width: '60%',
-    padding: '8px',
-    marginBottom: '5px',
-    marginRight : '2px',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
+    width: '100%',
+    padding: '5px',
+    margin: '0px',
+    border: '1px solid #15181d',
     boxShadow: 'none',
+    borderRadius: '5px',
+    textAlign: 'left',
+    fontSize: '14px',
+    outline : 'none',
+    
   },
 
   button: {
@@ -120,6 +128,18 @@ const styles = {
     borderRadius: '5px',
     backgroundColor: '#15181d',
   },
+
+  form: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    padding: '8px',
+    margin: '0',
+    border: '1px solid #ccc',
+    borderRadius: '5px',
+    boxShadow: 'none',
+  }
 };
 
 export default CharacterSearch;
