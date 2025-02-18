@@ -16,7 +16,7 @@ const CharacterRank = () => {
 
       try {
         // 여기에서 특정 상위 유저를 가져오는 API가 있다면 활용
-        const data = await fetchCharacterInfo("필례"); // 예제: 임시 캐릭터명 사용
+        const data = await fetchCharacterInfo(""); // 예제: 임시 캐릭터명 사용
         const sortedCharacters = data.sort(
           (a, b) => parseFloat(b.AvgItemLevel) - parseFloat(a.AvgItemLevel)
         );
@@ -38,7 +38,7 @@ const CharacterRank = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white rounded-xl shadow-md">
-      <h2 className="text-2xl font-bold mb-4">🏆 아이템 레벨 순위</h2>
+      <h2 className="text-2xl font-bold mb-4"> 아이템 레벨 순위</h2>
 
       {loading && <p className="text-gray-600">로딩 중...</p>}
       {error && <p className="text-red-500">{error}</p>}

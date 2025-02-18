@@ -4,7 +4,7 @@ import CharacterSearch from './characterSearch';
 import CharacterResult from './characterResult';
 import Character from './character';
 import EventBanner from './eventBanner';
-import Update from './Update';
+import Main from './Main';
 import CharacterRank from './CharacterRank';
 
 
@@ -17,7 +17,7 @@ const Home = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
     setShowResult(false); // 탭을 클릭하면 검색 결과는 사라짐
-    setShowUpdate(false); // ✅ 탭을 클릭하면 업데이트 숨김
+    setShowUpdate(false); //  탭을 클릭하면 업데이트 숨김
   };
 
   return (
@@ -26,15 +26,15 @@ const Home = () => {
       <CharacterSearch 
         setSearchQuery={setSearchQuery} 
         setShowResult={setShowResult} 
-        setActiveTab={setActiveTab} // ✅ 검색 시 탭 닫기
-        setShowUpdate={setShowUpdate} // ✅ 검색 시 업데이트숨김
+        setActiveTab={setActiveTab} //  검색 시 탭 닫기
+        setShowUpdate={setShowUpdate} //  검색 시 업데이트숨김
       />
 
       <Nav activeTab={activeTab} setActiveTab={setActiveTab} handleTabClick={handleTabClick} />
 
       {/* 검색 결과가 있을 경우 CharacterResult 표시, 없으면 선택된 탭의 콘텐츠 표시 */}
 
-      {showUpdate && <Update />}
+      {showUpdate && <Main />}
       <div>
         {showResult ? (
           <CharacterResult characterName={searchQuery}/>

@@ -1,0 +1,84 @@
+/* character.module.css */
+
+*{
+    color: #fff;
+    background-color: #15181d;
+}
+
+.App {
+    width: 100%;
+}
+
+.header{
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+
+}
+
+.lost_wrap {
+    display: grid;
+    grid-template-columns: repeat(minmax(300px, 1fr));
+    justify-content: center; 
+    color: #272c35;
+}
+
+.lost_character {
+    display: flex;
+    flex: 1 1 30%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+
+.classinfo {
+    text-align: center;
+}
+
+/* character.module.css */
+
+.swiperContainer {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.characterCard {
+    border-radius: 8px;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.characterName {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.characterImage {
+    
+    width: 50%;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}

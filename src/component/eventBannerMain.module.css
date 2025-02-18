@@ -1,0 +1,48 @@
+
+
+.App {
+    border-radius: 10px;
+    background-color: #33448b;
+}
+
+.header {
+    text-align: center;
+    font-size: 16px;
+}
+
+
+.swiperContainer {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
+    border-radius: 10px;
+    background-color: #33448b;
+}
+
+.swiperSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiperSlide img {
+    width: 70%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.classinfo {
+    text-align: center;
+    border-radius: 10px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.eventBannerImage {
+    cursor: pointer;
+}
