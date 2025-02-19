@@ -78,7 +78,21 @@ const styles = {
     width : '100%',
     height : 'auto',
 
-  }
+  },
+  
+  error: {
+    color: 'red',
+    fontSize: '14px',
+    marginTop: '10px',
+  },
+
+  result: {
+    marginTop: '20px',
+    padding: '10px',
+    border: '1px solid #ddd',
+    borderRadius: '5px',
+    backgroundColor: '#15181d',
+  },
 
   
 };

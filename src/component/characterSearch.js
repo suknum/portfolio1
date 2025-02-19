@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import styles from './characterSearch.module.css';
 
 const CharacterSearch = ({ setSearchQuery, setShowResult, setActiveTab , setShowUpdate }) => {
   const [characterName, setCharacterName] = useState('');
@@ -34,22 +35,22 @@ const CharacterSearch = ({ setSearchQuery, setShowResult, setActiveTab , setShow
   };
 
   return (
-    <div style={styles.container}>
-        <h2 style={styles.header} onClick={goToHome}>LostIn</h2>
-      <div style={styles.contentWrap}>
+    <div className={styles.container}>
+        <h2 className={styles.header} onClick={goToHome}>LostIn</h2>
+      <div className={styles.contentWrap}>
 
-        <form method='get' style={styles.form}>
+        <form method='get' className={` ${styles.form} ${styles.searchBar}`}>
           <input
             type="text"
             placeholder="캐릭터 이름을 입력해주세요..."
             value={characterName}
             onChange={(e) => setCharacterName(e.target.value)}
             onKeyDown={handleKeyPress}
-            style={styles.input}
+            className={styles.input}
             
           />
           
-          <button onClick={handleSearch} style={styles.button}>
+          <button onClick={handleSearch} className={styles.button}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </form>
@@ -59,87 +60,5 @@ const CharacterSearch = ({ setSearchQuery, setShowResult, setActiveTab , setShow
   );
 };
 
-
-
-
-
-
-
-
-
-
-// ✅ 스타일 정의 추가
-const styles = {
-  header: {
-    marginTop: '5px',
-    marginright : '2px',
-    cursor: 'pointer',
-    textDecoration: 'none',
-  },
-  container: {
-    textAlign: 'center',
-    padding: '10px',
-    maxWidth: '400px',
-    margin: 'auto',
-    borderBottom: '1px solid #272c35',
-    backgroundColor: '#15181d',
-    color : '#fff',
-  },
-
-  contentWrap: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginright : '2px',
-  },
-
-  input: {
-    width: '100%',
-    padding: '5px',
-    margin: '0px',
-    border: '1px solid #15181d',
-    boxShadow: 'none',
-    borderRadius: '5px',
-    textAlign: 'left',
-    fontSize: '14px',
-    outline : 'none',
-    
-  },
-
-  button: {
-    padding: '2px 15px',
-    cursor: 'pointer',
-    border: 'none',
-    backgroundColor: '#15181d',
-    borderRadius: '5px',
-    fontSize: '16px',
-    color: '#fff',
-  },
-
-  error: {
-    color: 'red',
-    fontSize: '14px',
-    marginTop: '10px',
-  },
-
-  result: {
-    marginTop: '20px',
-    padding: '10px',
-    border: '1px solid #ddd',
-    borderRadius: '5px',
-    backgroundColor: '#15181d',
-  },
-
-  form: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '100%',
-    padding: '8px',
-    margin: '0',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    boxShadow: 'none',
-  }
-};
 
 export default CharacterSearch;
